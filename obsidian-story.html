@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar's Rock Cycle Biography - Interactive Story</title>
+    <link rel="stylesheet" href="obsidian-style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="volcano-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1 class="nav-logo">🌋 OSCAR'S STORY</h1>
+            <div class="nav-links">
+                <a href="#intro">Intro</a>
+                <a href="#birth">Birth</a>
+                <a href="#home">Home</a>
+                <a href="#cycle">Rock Cycle</a>
+                <a href="#uses">Uses</a>
+                <a href="#appearance">Appearance</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="intro" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="MY LIFE AS OBSIDIAN">MY LIFE AS OBSIDIAN</h1>
+            <h2 class="subtitle">A Totally Rad Rock Cycle Story</h2>
+            <p class="hero-intro">By: Obsidian "Oscar" Volcanic</p>
+            <div class="obsidian-rock" id="mainRock">
+                <div class="oscar-inner-face">
+                    <div class="oscar-shine"></div>
+                    <div class="oscar-eyebrow oscar-eyebrow-left"></div>
+                    <div class="oscar-eyebrow oscar-eyebrow-right"></div>
+                    <div class="oscar-eye oscar-eye-left">
+                        <div class="oscar-pupil"></div>
+                    </div>
+                    <div class="oscar-eye oscar-eye-right">
+                        <div class="oscar-pupil"></div>
+                    </div>
+                    <div class="oscar-mouth">
+                        <div class="oscar-tongue"></div>
+                    </div>
+                </div>
+                <div class="oscar-lava-glow"></div>
+            </div>
+            <p class="hero-text">
+                Hey, I'm Oscar. Yeah, I know, weird name. But when you're literally made of volcanic glass,
+                your parents (in this case, a massive volcanic eruption) run out of names quickly.
+            </p>
+            <button class="cta-button" onclick="scrollToSection('birth')">Start My Story ⬇</button>
+        </div>
+    </section>
+
+    <!-- Chapter 1: Birth Story -->
+    <section id="birth" class="chapter">
+        <div class="container">
+            <h2 class="chapter-title">My Birth Story <span class="subtitle-text">(literally cool)</span></h2>
+
+            <div class="info-card">
+                <h3>What I Am:</h3>
+                <p>I'm an <strong>igneous rock</strong> – specifically, obsidian. And before you ask, yes, I'm basically one of the "cool kids" of the rock world. I'm volcanic glass, which means I'm smooth, shiny, and sharp enough to be dangerous.</p>
+            </div>
+
+            <div class="birth-animation">
+                <div class="volcano-animation" id="volcanoAnim">
+                    <div class="mountain"></div>
+                    <div class="crater"></div>
+                    <div class="lava-chamber"></div>
+                    <div class="lava-fountain"></div>
+                    <div class="lava-flow-left"></div>
+                    <div class="lava-flow-center"></div>
+                    <div class="lava-flow-right"></div>
+                    <div class="smoke smoke-1"></div>
+                    <div class="smoke smoke-2"></div>
+                    <div class="smoke smoke-3"></div>
+                    <div class="explosion-particle particle-1"></div>
+                    <div class="explosion-particle particle-2"></div>
+                    <div class="explosion-particle particle-3"></div>
+                    <div class="explosion-particle particle-4"></div>
+                    <div class="explosion-particle particle-5"></div>
+                    <div class="explosion-particle particle-6"></div>
+                    <div class="explosion-particle particle-7"></div>
+                    <div class="explosion-particle particle-8"></div>
+                    <div class="eruption-text">Click the volcano to see my birth! 🌋</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>How I Was Born:</h3>
+                <p>So, here's my origin story. About 1,300 years ago at <strong>Newberry Volcanic National Monument</strong> in Oregon, there was this MASSIVE volcanic eruption. (At the time I was still silica loaded rock juice of course), I was shot out of the volcano and I cooled down SO FAST that crystals didn't even have time to form.</p>
+                <p class="highlight-text">One second I was flowing hot lava/rock juice, the next – BAM – I'm a glass rock. No awkward middle phase, no waiting to "mature." Just instant solidification. It was like going from elementary school straight to college. No warning. That's how I turned into obsidian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 2: Home -->
+    <section id="home" class="chapter dark-section">
+        <div class="container">
+            <h2 class="chapter-title">My Home(s) and Hangouts</h2>
+
+            <div class="info-card">
+                <h3>Primary Residence:</h3>
+                <p><strong>Newberry Volcanic National Monument, Oregon.</strong> It's basically the coolest place ever – obsidian flows everywhere, volcanic features, and tourists who think I'm "so shiny and pretty." Yeah, I get that a lot.</p>
+            </div>
+
+            <div class="world-map">
+                <h3>Other Places You'll Find My Relatives:</h3>
+                <div class="locations-grid">
+                    <div class="location-card" data-location="iceland">
+                        <div class="location-icon">❄️</div>
+                        <h4>Iceland</h4>
+                        <p>Where my Viking cousins hang out being all mysterious</p>
+                    </div>
+                    <div class="location-card" data-location="japan">
+                        <div class="location-icon">🗻</div>
+                        <h4>Japan</h4>
+                        <p>Mount Fuji area (the fancy relatives)</p>
+                    </div>
+                    <div class="location-card" data-location="mexico">
+                        <div class="location-icon">🌶️</div>
+                        <h4>Mexico</h4>
+                        <p>Sierra de Pachuca (the spicy side of the family)</p>
+                    </div>
+                    <div class="location-card" data-location="italy">
+                        <div class="location-icon">🍕</div>
+                        <h4>Italy</h4>
+                        <p>Lipari Islands (the fashionable Europeans)</p>
+                    </div>
+                    <div class="location-card" data-location="greece">
+                        <div class="location-icon">🏛️</div>
+                        <h4>Greece</h4>
+                        <p>Milos Island (ancient history nerds)</p>
+                    </div>
+                    <div class="location-card" data-location="newzealand">
+                        <div class="location-icon">🥝</div>
+                        <h4>New Zealand</h4>
+                        <p>Mayor Island (the ones who like kiwis)</p>
+                    </div>
+                </div>
+                <p class="fun-fact">Basically, anywhere volcanoes go boom boom and the red hot rock juice cools super fast, you'll find one of my cousins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 3: Rock Cycle -->
+    <section id="cycle" class="chapter">
+        <div class="container">
+            <h2 class="chapter-title">My Future <span class="subtitle-text">(The Rock Cycle)</span></h2>
+
+            <p class="intro-text">Okay, so I won't be obsidian forever – I'm going to go through the rock cycle. Here's the process:</p>
+
+            <div class="rock-cycle-diagram">
+                <h3>Click Each Rock Type to Learn More!</h3>
+
+                <!-- New Cross Layout -->
+                <div class="cycle-cross-layout">
+                    <!-- Top: Obsidian (Me) -->
+                    <div class="cycle-top">
+                        <div class="current-rock" data-type="obsidian">
+                            <div class="rock-icon obsidian-icon">⚫</div>
+                            <p>ME NOW<br/>(Obsidian)</p>
+                        </div>
+                        <div class="arrow arrow-down-left">↙</div>
+                        <div class="arrow arrow-down-right">↘</div>
+                    </div>
+
+                    <!-- Middle Row: Sedimentary - Details - Metamorphic -->
+                    <div class="cycle-middle">
+                        <!-- Left: Sedimentary -->
+                        <div class="rock-type sedimentary" data-type="sedimentary">
+                            <div class="rock-icon">🪨</div>
+                            <p>Sedimentary<br/>(Slow and boring)</p>
+                        </div>
+
+                        <!-- Center: Details Display -->
+                        <div class="cycle-details-center">
+                            <div class="detail-content" id="detail-obsidian">
+                                <h4>Obsidian (That's Me!)</h4>
+                                <p>I'm volcanic glass formed when lava cools super fast. No crystals, just pure glassy goodness. Click the other rocks to see how I can transform!</p>
+                            </div>
+                            <div class="detail-content" id="detail-sedimentary" style="display: none;">
+                                <h4>Sedimentary Rock (slow and boring)</h4>
+                                <p>Over millions of years, I get weathered and eroded by wind, rain, and ice. Little pieces of me weather off, get eroded into rivers, transported to the ocean, and buried under layers of sediment.</p>
+                                <p>All that pressure compacts me into <strong>shale or sandstone</strong>. It's like going from a cool person with sunglasses to a boring cow who eats grass.</p>
+                                <p class="timeline"><strong>Timeline:</strong> Several million years.</p>
+                            </div>
+                            <div class="detail-content" id="detail-metamorphic" style="display: none;">
+                                <h4>Metamorphic Rock (The Makeover)</h4>
+                                <p>If I get buried deep underground, all that heat and pressure transforms me into <strong>metamorphic rock</strong> like quartzite or schist – rocks that have been "cooked" but not melted.</p>
+                                <p>Getting crushed and burned for millions of years isn't so bad.</p>
+                                <p class="timeline"><strong>Timeline:</strong> 1-2 million years.</p>
+                            </div>
+                            <div class="detail-content" id="detail-igneous" style="display: none;">
+                                <h4>Igneous Rock (The Reunion Tour)</h4>
+                                <p>THIS is the dream! If I get buried deep enough to melt again, I become magma! Then if that magma erupts, I become a NEW igneous rock.</p>
+                                <p>Maybe I'll be obsidian again, or grow some crystals and become granite or basalt. It's like getting a do-over!</p>
+                                <p class="timeline"><strong>Timeline:</strong> Tens of millions of years.</p>
+                            </div>
+                        </div>
+
+                        <!-- Right: Metamorphic -->
+                        <div class="rock-type metamorphic" data-type="metamorphic">
+                            <div class="rock-icon">💎</div>
+                            <p>Metamorphic<br/>(The makeover)</p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom: Igneous -->
+                    <div class="cycle-bottom">
+                        <div class="arrow arrow-up-left">↖</div>
+                        <div class="arrow arrow-up-right">↗</div>
+                        <div class="rock-type igneous" data-type="igneous">
+                            <div class="rock-icon">🔥</div>
+                            <p>Igneous<br/>(Back to obsidian)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 4: Uses -->
+    <section id="uses" class="chapter dark-section">
+        <div class="container">
+            <h2 class="chapter-title">Why Humans Are Obsessed With Me</h2>
+
+            <p class="intro-text">Okay, not gonna lie, humans LOVE me. Here's why I'm actually useful:</p>
+
+            <div class="uses-section">
+                <h3>Historical Street Cred:</h3>
+                <div class="uses-grid">
+                    <div class="use-card clickable" id="stoneAgeCard">
+                        <div class="use-icon">🗡️</div>
+                        <h4>Stone Age Tools</h4>
+                        <p>Ancient humans used me to make knives, spearheads, and arrowheads because I'm sharper than steel when fractured. Yeah, I was basically prehistoric humanity's Swiss Army knife.</p>
+                        <span class="click-hint">Click to see an example!</span>
+                    </div>
+                    <div class="use-card clickable" id="aztecCard">
+                        <div class="use-icon">⚔️</div>
+                        <h4>Aztec Weapons</h4>
+                        <p>The Aztecs put me in their war clubs (macuahuitl). It was TERRIFYING.</p>
+                        <span class="click-hint">Click to see an example!</span>
+                    </div>
+                    <div class="use-card clickable" id="surgicalCard">
+                        <div class="use-icon">🏥</div>
+                        <h4>Surgical Scalpels</h4>
+                        <p>Modern surgeons sometimes use obsidian blades because they're sharper than steel scalpels. FROM ANCIENT WEAPONS TO SAVING LIVES. Character development!</p>
+                        <span class="click-hint">Click to see an example!</span>
+                    </div>
+                </div>
+
+                <h3>Modern Uses:</h3>
+                <div class="modern-uses">
+                    <div class="modern-use-item">💍 <strong>Jewelry:</strong> People make me into necklaces and stuff. I'm pretty, okay?</div>
+                    <div class="modern-use-item">🏺 <strong>Decorations:</strong> Fancy people collect me.</div>
+                    <div class="modern-use-item">🔬 <strong>Science:</strong> Geologists study me to understand volcanic activity.</div>
+                    <div class="modern-use-item">📅 <strong>Dating Volcanoes:</strong> Scientists can figure out when volcanic eruptions happened by studying my chemistry. I'm like a volcanic calendar.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 5: Appearance -->
+    <section id="appearance" class="chapter">
+        <div class="container">
+            <h2 class="chapter-title">Visual Evidence <span class="subtitle-text">(What I Actually Look Like)</span></h2>
+
+            <div class="appearance-showcase">
+                <div class="obsidian-display">
+                    <div class="obsidian-sample" id="obsidianSample">
+                        <div class="oscar-inner-face">
+                            <div class="oscar-shine"></div>
+                            <div class="oscar-eyebrow oscar-eyebrow-left"></div>
+                            <div class="oscar-eyebrow oscar-eyebrow-right"></div>
+                            <div class="oscar-eye oscar-eye-left">
+                                <div class="oscar-pupil"></div>
+                            </div>
+                            <div class="oscar-eye oscar-eye-right">
+                                <div class="oscar-pupil"></div>
+                            </div>
+                            <div class="oscar-mouth">
+                                <div class="oscar-tongue"></div>
+                            </div>
+                        </div>
+                        <div class="oscar-lava-glow"></div>
+                    </div>
+                    <p class="sample-label">Click on me to see me in the wild!</p>
+                </div>
+
+                <div class="properties-list">
+                    <h3>My Appearance:</h3>
+                    <div class="property-item">
+                        <span class="property-icon">⚫</span>
+                        <strong>COLOR:</strong> Black, shiny, sometimes with brown or green streaks
+                    </div>
+                    <div class="property-item">
+                        <span class="property-icon">✨</span>
+                        <strong>TEXTURE:</strong> Super smooth, glassy, reflective
+                    </div>
+                    <div class="property-item">
+                        <span class="property-icon">🔪</span>
+                        <strong>EDGES:</strong> Sharp when broken (conchoidal fracture – fancy term for "breaks like glass")
+                    </div>
+                    <div class="property-item">
+                        <span class="property-icon">🪨</span>
+                        <strong>STRUCTURE:</strong> No visible crystals (that's my whole thing – I cooled too fast!)
+                    </div>
+                </div>
+            </div>
+
+            <div class="texture-description">
+                <h3>What My Texture Looks Like:</h3>
+                <p>Imagine the smoothest, shiniest black glass you've ever seen. Now imagine it formed from literal lava. That's me. Some of my buddies have cool patterns like "snowflake obsidian" (with white spots) or "rainbow obsidian" (with colorful sheens), but I'm just classic black and shiny.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epilogue -->
+    <section class="epilogue dark-section">
+        <div class="container">
+            <h2 class="chapter-title">Wrap Up</h2>
+
+            <div class="epilogue-content">
+                <p>So yeah, that's my life story so far. I'm a teenage rock (in geological terms) just trying to figure out who I am before erosion, heat, and pressure literally transform me into someone else.</p>
+
+                <p>Will I become boring sedimentary rock? Pressure-cooked metamorphic rock? Or will I get melted down and reborn as igneous rock again?</p>
+
+                <p>I don't know, man. Nobody tells you being a rock is this complicated.</p>
+
+                <p>But for now, I'm just gonna sit here at the Newberry Volcano, looking shiny and sharp, being historically and scientifically significant, and waiting to see what the next few million years bring.</p>
+
+          
+
+                <div class="the-end">THE END</div>
+
+                <p class="ps">(P.S. – If you find me on the ground, please don't lick me to see if I'm really glass. Tourists do that. It's weird. Don't be that person.)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Quiz Section -->
+    <section class="quiz-section">
+        <div class="container">
+            <h2 class="chapter-title">Test Your Obsidian Knowledge! 🧠</h2>
+            <div id="quiz">
+                <div class="quiz-question active" data-question="1">
+                    <h3>Question 1: What type of rock is obsidian?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">Igneous</button>
+                        <button class="quiz-option" data-correct="false">Sedimentary</button>
+                        <button class="quiz-option" data-correct="false">Metamorphic</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question="2">
+                    <h3>Question 2: Where was Oscar born?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Mount Fuji, Japan</button>
+                        <button class="quiz-option" data-correct="false">Iceland</button>
+                        <button class="quiz-option" data-correct="true">Newberry Volcanic National Monument, Oregon</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question="3">
+                    <h3>Question 3: What makes obsidian special?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">It has large crystals</button>
+                        <button class="quiz-option" data-correct="true">It's volcanic glass with no crystals</button>
+                        <button class="quiz-option" data-correct="false">It's made of compressed layers</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question="4">
+                    <h3>Question 4: What did the Aztecs use obsidian for?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Building pyramids</button>
+                        <button class="quiz-option" data-correct="false">Jewelry only</button>
+                        <button class="quiz-option" data-correct="true">War clubs </button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question="5">
+                    <h3>Question 5: Why doesn't obsidian have crystals?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">It cooled too fast for crystals to form</button>
+                        <button class="quiz-option" data-correct="false">It's too old</button>
+                        <button class="quiz-option" data-correct="false">Crystals dissolved over time</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question="6">
+                    <h3>Question 6: True or False - Obsidian can be green.</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">True</button>
+                        <button class="quiz-option" data-correct="false">False</button>
+                    </div>
+                </div>
+                <div class="quiz-results" style="display: none;">
+                    <h3>Great job! You know your obsidian facts! 🎉</h3>
+                    <button class="cta-button" onclick="resetQuiz()">Take Quiz Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="image-modal" id="galleryModal">
+        <div class="gallery-content">
+            <span class="modal-close" id="galleryClose">&times;</span>
+            <h3 class="gallery-title">Oscar in the Wild!</h3>
+            <div class="gallery-single">
+                <img src="obsidian1.jpg" alt="Obsidian in nature">
+            </div>
+            <p class="gallery-caption">Real obsidian at Newberry Volcanic National Monument!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Geology Project</p>
+        <p> </p>
+    </footer>
+
+    <script src="obsidian-script.js"></script>
+</body>
+</html>
