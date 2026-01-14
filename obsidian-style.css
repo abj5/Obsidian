@@ -1,1920 +1,2167 @@
 /* Reset and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --obsidian-black: #0a0a0a;
-    --obsidian-dark: #1a1a1a;
-    --obsidian-shine: #2a2a2a;
-    --lava-orange: #ff6b35;
-    --lava-red: #d32f2f;
-    --lava-yellow: #ffa726;
-    --volcanic-purple: #5e35b1;
-    --highlight-blue: #29b6f6;
-    --text-white: #ffffff;
-    --text-gray: #b0b0b0;
+  --obsidian-black: #0a0a0a;
+  --obsidian-dark: #1a1a1a;
+  --obsidian-shine: #2a2a2a;
+  --lava-orange: #ff6b35;
+  --lava-red: #d32f2f;
+  --lava-yellow: #ffa726;
+  --volcanic-purple: #5e35b1;
+  --highlight-blue: #29b6f6;
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--obsidian-black) 0%, var(--obsidian-dark) 50%, #1a0a0a 100%);
-    color: var(--text-white);
-    line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--obsidian-black) 0%,
+    var(--obsidian-dark) 50%,
+    #1a0a0a 100%
+  );
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Animated Background Stars */
 .stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image:
-        radial-gradient(2px 2px at 20% 30%, white, transparent),
-        radial-gradient(2px 2px at 60% 70%, white, transparent),
-        radial-gradient(1px 1px at 50% 50%, white, transparent),
-        radial-gradient(1px 1px at 80% 10%, white, transparent),
-        radial-gradient(2px 2px at 90% 60%, white, transparent),
-        radial-gradient(1px 1px at 33% 50%, white, transparent);
-    background-size: 200% 200%;
-    animation: twinkle 10s ease-in-out infinite;
-    opacity: 0.4;
-    z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 50%, white, transparent);
+  background-size: 200% 200%;
+  animation: twinkle 10s ease-in-out infinite;
+  opacity: 0.4;
+  z-index: 0;
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .volcano-bg {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    background: linear-gradient(to top, rgba(255, 107, 53, 0.1), transparent);
-    pointer-events: none;
-    z-index: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to top, rgba(255, 107, 53, 0.1), transparent);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Navigation */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(255, 107, 53, 0.3);
-    border-bottom: 2px solid var(--lava-orange);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(255, 107, 53, 0.3);
+  border-bottom: 2px solid var(--lava-orange);
 }
 
 .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
+  color: var(--text-gray);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-links a:hover {
-    color: var(--lava-orange);
-    transform: translateY(-2px);
+  color: var(--lava-orange);
+  transform: translateY(-2px);
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--lava-orange);
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--lava-orange);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem 2rem;
-    position: relative;
-    z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 .glitch {
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow), var(--volcanic-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: glowPulse 2s ease-in-out infinite;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    var(--lava-orange),
+    var(--lava-yellow),
+    var(--volcanic-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glowPulse 2s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5)); }
-    50% { filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8));
+  }
 }
 
 .subtitle {
-    font-size: 1.5rem;
-    color: var(--text-gray);
-    margin: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  margin: 1rem 0;
 }
 
 .hero-intro {
-    font-size: 1.2rem;
-    color: var(--highlight-blue);
-    margin: 1rem 0 2rem;
+  font-size: 1.2rem;
+  color: var(--highlight-blue);
+  margin: 1rem 0 2rem;
 }
 
 .hero-text {
-    font-size: 1.1rem;
-    color: var(--text-gray);
-    margin: 2rem 0;
-    line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  margin: 2rem 0;
+  line-height: 1.8;
 }
 
 /* Oscar - The Obsidian Character */
 .obsidian-rock {
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
-    background: #0a0a0a;
-    clip-path: polygon(
-        50% 0%,
-        85% 8%,
-        100% 35%,
-        95% 70%,
-        80% 95%,
-        50% 100%,
-        20% 95%,
-        5% 70%,
-        0% 35%,
-        15% 8%
-    );
-    box-shadow:
-        0 0 40px rgba(255, 107, 53, 0.4),
-        0 10px 30px rgba(0, 0, 0, 0.8);
-    animation: float 3s ease-in-out infinite;
-    position: relative;
-    overflow: visible;
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto;
+  background: #0a0a0a;
+  clip-path: polygon(
+    50% 0%,
+    85% 8%,
+    100% 35%,
+    95% 70%,
+    80% 95%,
+    50% 100%,
+    20% 95%,
+    5% 70%,
+    0% 35%,
+    15% 8%
+  );
+  box-shadow: 0 0 40px rgba(255, 107, 53, 0.4), 0 10px 30px rgba(0, 0, 0, 0.8);
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  overflow: visible;
 }
 
 /* Inner gray face area */
 .oscar-inner-face {
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    width: 76%;
-    height: 70%;
-    background: #3d3d3d;
-    clip-path: polygon(
-        50% 0%,
-        90% 15%,
-        100% 50%,
-        85% 90%,
-        50% 100%,
-        15% 90%,
-        0% 50%,
-        10% 15%
-    );
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: 76%;
+  height: 70%;
+  background: #3d3d3d;
+  clip-path: polygon(
+    50% 0%,
+    90% 15%,
+    100% 50%,
+    85% 90%,
+    50% 100%,
+    15% 90%,
+    0% 50%,
+    10% 15%
+  );
 }
 
 /* Gray shine/highlight at top */
 .oscar-shine {
-    position: absolute;
-    top: -8%;
-    right: -5%;
-    width: 45%;
-    height: 35%;
-    background: linear-gradient(135deg, #6a6a6a, #4a4a4a);
-    clip-path: polygon(
-        20% 0%,
-        100% 20%,
-        80% 100%,
-        0% 60%
-    );
-    opacity: 0.8;
+  position: absolute;
+  top: -8%;
+  right: -5%;
+  width: 45%;
+  height: 35%;
+  background: linear-gradient(135deg, #6a6a6a, #4a4a4a);
+  clip-path: polygon(20% 0%, 100% 20%, 80% 100%, 0% 60%);
+  opacity: 0.8;
 }
 
 /* Eyebrows */
 .oscar-eyebrow {
-    position: absolute;
-    width: 22%;
-    height: 6%;
-    background: #2a2a2a;
-    border-radius: 3px;
+  position: absolute;
+  width: 22%;
+  height: 6%;
+  background: #2a2a2a;
+  border-radius: 3px;
 }
 
 .oscar-eyebrow-left {
-    top: 22%;
-    left: 18%;
-    transform: rotate(-10deg);
+  top: 22%;
+  left: 18%;
+  transform: rotate(-10deg);
 }
 
 .oscar-eyebrow-right {
-    top: 22%;
-    right: 18%;
-    transform: rotate(10deg);
+  top: 22%;
+  right: 18%;
+  transform: rotate(10deg);
 }
 
 /* Eyes */
 .oscar-eye {
-    position: absolute;
-    width: 28%;
-    height: 32%;
-    background: #ffffff;
-    border-radius: 50%;
-    top: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  width: 28%;
+  height: 32%;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .oscar-eye-left {
-    left: 12%;
+  left: 12%;
 }
 
 .oscar-eye-right {
-    right: 12%;
+  right: 12%;
 }
 
 /* Pupils */
 .oscar-pupil {
-    width: 45%;
-    height: 45%;
-    background: #4a4a4a;
-    border-radius: 50%;
-    position: relative;
-    transform: translate(15%, 0);
+  width: 45%;
+  height: 45%;
+  background: #4a4a4a;
+  border-radius: 50%;
+  position: relative;
+  transform: translate(15%, 0);
 }
 
 .oscar-pupil::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 30%;
-    height: 30%;
-    background: white;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 30%;
+  height: 30%;
+  background: white;
+  border-radius: 50%;
 }
 
 /* Mouth */
 .oscar-mouth {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 35%;
-    height: 20%;
-    background: #1a1a1a;
-    border-radius: 0 0 50% 50%;
-    overflow: hidden;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 20%;
+  background: #1a1a1a;
+  border-radius: 0 0 50% 50%;
+  overflow: hidden;
 }
 
 /* Tongue */
 .oscar-tongue {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 60%;
-    background: #e85d04;
-    border-radius: 50% 50% 40% 40%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 60%;
+  background: #e85d04;
+  border-radius: 50% 50% 40% 40%;
 }
 
 /* Lava glow at bottom */
 .oscar-lava-glow {
-    position: absolute;
-    bottom: -5%;
-    left: 10%;
-    width: 80%;
-    height: 25%;
-    background: radial-gradient(ellipse at center, #ff9500 0%, #e85d04 40%, transparent 70%);
-    filter: blur(8px);
-    opacity: 0.9;
-    z-index: -1;
+  position: absolute;
+  bottom: -5%;
+  left: 10%;
+  width: 80%;
+  height: 25%;
+  background: radial-gradient(
+    ellipse at center,
+    #ff9500 0%,
+    #e85d04 40%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  opacity: 0.9;
+  z-index: -1;
 }
 
 /* Pupils follow mouse via JavaScript */
 .oscar-pupil {
-    transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(3deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
 }
 
 .cta-button {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--text-white);
-    background: linear-gradient(45deg, var(--lava-orange), var(--lava-red));
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-    margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-white);
+  background: linear-gradient(45deg, var(--lava-orange), var(--lava-red));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  margin-top: 2rem;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
-    background: linear-gradient(45deg, var(--lava-red), var(--lava-orange));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+  background: linear-gradient(45deg, var(--lava-red), var(--lava-orange));
 }
 
 /* Chapter Sections */
 .chapter {
-    padding: 5rem 2rem;
-    position: relative;
-    z-index: 1;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .dark-section {
-    background: rgba(26, 26, 26, 0.5);
-    backdrop-filter: blur(5px);
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .chapter-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle-text {
-    font-size: 1.5rem;
-    color: var(--text-gray);
-    font-weight: normal;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  font-weight: normal;
 }
 
 .intro-text {
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--text-gray);
-    margin-bottom: 3rem;
-    line-height: 1.8;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--text-gray);
+  margin-bottom: 3rem;
+  line-height: 1.8;
 }
 
 /* Info Cards */
 .info-card {
-    background: rgba(42, 42, 42, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    transition: all 0.3s ease;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.3s ease;
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--lava-orange);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  transform: translateY(-5px);
+  border-color: var(--lava-orange);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
 }
 
 .info-card h3 {
-    color: var(--lava-orange);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+  color: var(--lava-orange);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .info-card p {
-    color: var(--text-gray);
-    line-height: 1.8;
-    margin-bottom: 1rem;
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .highlight-text {
-    background: rgba(255, 107, 53, 0.1);
-    padding: 1rem;
-    border-left: 4px solid var(--lava-orange);
-    border-radius: 5px;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 1rem;
+  border-left: 4px solid var(--lava-orange);
+  border-radius: 5px;
 }
 
 /* Volcano Animation */
 .birth-animation {
-    display: flex;
-    justify-content: center;
-    margin: 3rem 0;
-    padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  padding: 2rem 0;
 }
 
 .volcano-animation {
-    position: relative;
-    width: 350px;
-    height: 320px;
-    cursor: pointer;
+  position: relative;
+  width: 350px;
+  height: 320px;
+  cursor: pointer;
 }
 
 /* 3D Cone-shaped Mountain with crater cut into top */
 .mountain {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 280px;
-    height: 180px;
-    background: linear-gradient(
-        to right,
-        #252525 0%,
-        #3d3d3d 15%,
-        #4a4a4a 30%,
-        #5a5a5a 50%,
-        #4a4a4a 70%,
-        #3d3d3d 85%,
-        #252525 100%
-    );
-    /* Cone with flat top for crater */
-    clip-path: polygon(
-        40% 0%,
-        60% 0%,
-        100% 100%,
-        0% 100%
-    );
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(
+    to right,
+    #252525 0%,
+    #3d3d3d 15%,
+    #4a4a4a 30%,
+    #5a5a5a 50%,
+    #4a4a4a 70%,
+    #3d3d3d 85%,
+    #252525 100%
+  );
+  /* Cone with flat top for crater */
+  clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
 }
 
 /* Left shaded side for 3D effect */
 .mountain::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 0.2) 50%,
-        transparent 100%
-    );
-    clip-path: polygon(
-        100% 0%,
-        100% 100%,
-        0% 100%
-    );
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
 }
 
 /* Right highlight for 3D effect */
 .mountain::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(
-        to left,
-        rgba(255, 255, 255, 0.08) 0%,
-        transparent 100%
-    );
-    clip-path: polygon(
-        0% 0%,
-        100% 100%,
-        0% 100%
-    );
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 100%
+  );
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
 }
 
 .volcano-animation:hover .mountain {
-    background: linear-gradient(
-        to right,
-        #2a2a2a 0%,
-        #424242 15%,
-        #505050 30%,
-        #606060 50%,
-        #505050 70%,
-        #424242 85%,
-        #2a2a2a 100%
-    );
+  background: linear-gradient(
+    to right,
+    #2a2a2a 0%,
+    #424242 15%,
+    #505050 30%,
+    #606060 50%,
+    #505050 70%,
+    #424242 85%,
+    #2a2a2a 100%
+  );
 }
 
 /* Base of volcano for 3D depth */
 .volcano-animation::before {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 30px;
-    background: radial-gradient(ellipse, #2a2a2a 0%, #1a1a1a 70%, transparent 100%);
-    border-radius: 50%;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 30px;
+  background: radial-gradient(
+    ellipse,
+    #2a2a2a 0%,
+    #1a1a1a 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  z-index: -1;
 }
 
 /* Crater - sits at the flat top of the cone */
 .crater {
-    position: absolute;
-    bottom: 195px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 18px;
-    background: radial-gradient(ellipse, #0a0000 40%, #1a0500 70%, #2a1000 100%);
-    border-radius: 50%;
-    z-index: 5;
-    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.9);
+  position: absolute;
+  bottom: 195px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 18px;
+  background: radial-gradient(ellipse, #0a0000 40%, #1a0500 70%, #2a1000 100%);
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.9);
 }
 
 /* Glowing lava pool in crater */
 .lava-chamber {
-    position: absolute;
-    bottom: 196px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 42px;
-    height: 12px;
-    background: radial-gradient(ellipse, var(--lava-yellow) 20%, var(--lava-orange) 60%, var(--lava-red) 100%);
-    border-radius: 50%;
-    z-index: 6;
-    opacity: 0.7;
-    animation: chamberGlow 1.5s ease-in-out infinite;
-    box-shadow: 0 0 15px var(--lava-orange), 0 0 30px var(--lava-red);
+  position: absolute;
+  bottom: 196px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 12px;
+  background: radial-gradient(
+    ellipse,
+    var(--lava-yellow) 20%,
+    var(--lava-orange) 60%,
+    var(--lava-red) 100%
+  );
+  border-radius: 50%;
+  z-index: 6;
+  opacity: 0.7;
+  animation: chamberGlow 1.5s ease-in-out infinite;
+  box-shadow: 0 0 15px var(--lava-orange), 0 0 30px var(--lava-red);
 }
 
 @keyframes chamberGlow {
-    0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-    50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
 }
 
 /* Lava fountain shooting up from crater */
 .lava-fountain {
-    position: absolute;
-    bottom: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    background: linear-gradient(to top, var(--lava-red), var(--lava-orange), var(--lava-yellow), #fffde0);
-    border-radius: 40% 40% 0 0;
-    z-index: 10;
-    opacity: 0;
-    transform-origin: bottom center;
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  background: linear-gradient(
+    to top,
+    var(--lava-red),
+    var(--lava-orange),
+    var(--lava-yellow),
+    #fffde0
+  );
+  border-radius: 40% 40% 0 0;
+  z-index: 10;
+  opacity: 0;
+  transform-origin: bottom center;
 }
 
 .volcano-animation.erupting .lava-fountain {
-    animation: fountainBurst 2.5s ease-out forwards;
+  animation: fountainBurst 2.5s ease-out forwards;
 }
 
 @keyframes fountainBurst {
-    0% { height: 0; width: 20px; opacity: 0; transform: translateX(-50%); }
-    10% { height: 100px; width: 30px; opacity: 1; transform: translateX(-50%); }
-    20% { height: 120px; width: 35px; }
-    35% { height: 100px; width: 28px; }
-    50% { height: 70px; width: 22px; }
-    70% { height: 45px; width: 18px; opacity: 0.9; }
-    100% { height: 20px; width: 12px; opacity: 0.5; transform: translateX(-50%); }
+  0% {
+    height: 0;
+    width: 20px;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  10% {
+    height: 100px;
+    width: 30px;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  20% {
+    height: 120px;
+    width: 35px;
+  }
+  35% {
+    height: 100px;
+    width: 28px;
+  }
+  50% {
+    height: 70px;
+    width: 22px;
+  }
+  70% {
+    height: 45px;
+    width: 18px;
+    opacity: 0.9;
+  }
+  100% {
+    height: 20px;
+    width: 12px;
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
 }
 
 /* Lava Rivers Flowing Down the Mountain - positioned from TOP to flow downward */
-.lava-flow-left, .lava-flow-right, .lava-flow-center {
-    position: absolute;
-    z-index: 4;
-    opacity: 0;
-    filter: drop-shadow(0 0 6px var(--lava-orange)) drop-shadow(0 0 12px var(--lava-red));
+.lava-flow-left,
+.lava-flow-right,
+.lava-flow-center {
+  position: absolute;
+  z-index: 4;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px var(--lava-orange))
+    drop-shadow(0 0 12px var(--lava-red));
 }
 
 /* Left lava river - starts at crater, flows down-left */
 .lava-flow-left {
-    top: 118px;
-    left: 50%;
-    transform: translateX(-12px) rotate(-30deg);
-    transform-origin: top center;
-    width: 16px;
-    height: 0;
-    background: linear-gradient(to bottom,
-        var(--lava-yellow) 0%,
-        var(--lava-orange) 30%,
-        var(--lava-red) 70%,
-        #8b0000 100%
-    );
-    border-radius: 8px 8px 12px 12px;
+  top: 118px;
+  left: 50%;
+  transform: translateX(-12px) rotate(-30deg);
+  transform-origin: top center;
+  width: 16px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--lava-yellow) 0%,
+    var(--lava-orange) 30%,
+    var(--lava-red) 70%,
+    #8b0000 100%
+  );
+  border-radius: 8px 8px 12px 12px;
 }
 
 /* Right lava river - starts at crater, flows down-right */
 .lava-flow-right {
-    top: 118px;
-    left: 50%;
-    transform: translateX(-4px) rotate(30deg);
-    transform-origin: top center;
-    width: 14px;
-    height: 0;
-    background: linear-gradient(to bottom,
-        var(--lava-yellow) 0%,
-        var(--lava-orange) 30%,
-        var(--lava-red) 70%,
-        #8b0000 100%
-    );
-    border-radius: 8px 8px 10px 10px;
+  top: 118px;
+  left: 50%;
+  transform: translateX(-4px) rotate(30deg);
+  transform-origin: top center;
+  width: 14px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--lava-yellow) 0%,
+    var(--lava-orange) 30%,
+    var(--lava-red) 70%,
+    #8b0000 100%
+  );
+  border-radius: 8px 8px 10px 10px;
 }
 
 /* Center lava river - flows straight down the front */
 .lava-flow-center {
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    transform-origin: top center;
-    width: 18px;
-    height: 0;
-    background: linear-gradient(to bottom,
-        #fff8e0 0%,
-        var(--lava-yellow) 15%,
-        var(--lava-orange) 40%,
-        var(--lava-red) 75%,
-        #8b0000 100%
-    );
-    border-radius: 8px 8px 12px 12px;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: top center;
+  width: 18px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    #fff8e0 0%,
+    var(--lava-yellow) 15%,
+    var(--lava-orange) 40%,
+    var(--lava-red) 75%,
+    #8b0000 100%
+  );
+  border-radius: 8px 8px 12px 12px;
 }
 
 .volcano-animation.erupting .lava-flow-left {
-    animation: lavaRiverLeft 3.5s ease-out 0.3s forwards;
+  animation: lavaRiverLeft 3.5s ease-out 0.3s forwards;
 }
 
 .volcano-animation.erupting .lava-flow-center {
-    animation: lavaRiverCenter 3.5s ease-out 0.2s forwards;
+  animation: lavaRiverCenter 3.5s ease-out 0.2s forwards;
 }
 
 .volcano-animation.erupting .lava-flow-right {
-    animation: lavaRiverRight 3.5s ease-out 0.5s forwards;
+  animation: lavaRiverRight 3.5s ease-out 0.5s forwards;
 }
 
 /* Left lava river animation - flows like a river down the slope */
 /* Left lava river - rotated to follow slope, grows downward from crater */
 @keyframes lavaRiverLeft {
-    0% {
-        height: 0;
-        opacity: 0;
-        transform: translateX(-12px) rotate(-30deg);
-    }
-    10% {
-        height: 30px;
-        opacity: 1;
-        transform: translateX(-12px) rotate(-30deg);
-    }
-    30% {
-        height: 70px;
-        transform: translateX(-12px) rotate(-30deg);
-    }
-    50% {
-        height: 110px;
-        transform: translateX(-12px) rotate(-30deg);
-    }
-    70% {
-        height: 145px;
-        transform: translateX(-12px) rotate(-30deg);
-    }
-    100% {
-        height: 175px;
-        opacity: 0.9;
-        transform: translateX(-12px) rotate(-30deg);
-    }
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: translateX(-12px) rotate(-30deg);
+  }
+  10% {
+    height: 30px;
+    opacity: 1;
+    transform: translateX(-12px) rotate(-30deg);
+  }
+  30% {
+    height: 70px;
+    transform: translateX(-12px) rotate(-30deg);
+  }
+  50% {
+    height: 110px;
+    transform: translateX(-12px) rotate(-30deg);
+  }
+  70% {
+    height: 145px;
+    transform: translateX(-12px) rotate(-30deg);
+  }
+  100% {
+    height: 175px;
+    opacity: 0.9;
+    transform: translateX(-12px) rotate(-30deg);
+  }
 }
 
 /* Center lava river animation - flows straight down from crater */
 @keyframes lavaRiverCenter {
-    0% {
-        height: 0;
-        opacity: 0;
-        transform: translateX(-50%);
-    }
-    10% {
-        height: 35px;
-        opacity: 1;
-        transform: translateX(-50%);
-    }
-    30% {
-        height: 80px;
-        transform: translateX(-50%);
-    }
-    50% {
-        height: 120px;
-        transform: translateX(-50%);
-    }
-    70% {
-        height: 155px;
-        transform: translateX(-50%);
-    }
-    100% {
-        height: 180px;
-        opacity: 0.95;
-        transform: translateX(-50%);
-    }
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  10% {
+    height: 35px;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  30% {
+    height: 80px;
+    transform: translateX(-50%);
+  }
+  50% {
+    height: 120px;
+    transform: translateX(-50%);
+  }
+  70% {
+    height: 155px;
+    transform: translateX(-50%);
+  }
+  100% {
+    height: 180px;
+    opacity: 0.95;
+    transform: translateX(-50%);
+  }
 }
 
 /* Right lava river - rotated to follow slope, grows downward from crater */
 @keyframes lavaRiverRight {
-    0% {
-        height: 0;
-        opacity: 0;
-        transform: translateX(-4px) rotate(30deg);
-    }
-    10% {
-        height: 25px;
-        opacity: 1;
-        transform: translateX(-4px) rotate(30deg);
-    }
-    30% {
-        height: 60px;
-        transform: translateX(-4px) rotate(30deg);
-    }
-    50% {
-        height: 100px;
-        transform: translateX(-4px) rotate(30deg);
-    }
-    70% {
-        height: 130px;
-        transform: translateX(-4px) rotate(30deg);
-    }
-    100% {
-        height: 160px;
-        opacity: 0.85;
-        transform: translateX(-4px) rotate(30deg);
-    }
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: translateX(-4px) rotate(30deg);
+  }
+  10% {
+    height: 25px;
+    opacity: 1;
+    transform: translateX(-4px) rotate(30deg);
+  }
+  30% {
+    height: 60px;
+    transform: translateX(-4px) rotate(30deg);
+  }
+  50% {
+    height: 100px;
+    transform: translateX(-4px) rotate(30deg);
+  }
+  70% {
+    height: 130px;
+    transform: translateX(-4px) rotate(30deg);
+  }
+  100% {
+    height: 160px;
+    opacity: 0.85;
+    transform: translateX(-4px) rotate(30deg);
+  }
 }
 
 /* Smoke Effects */
 .smoke {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle, rgba(80, 80, 80, 0.7), rgba(50, 50, 50, 0.4), transparent);
-    border-radius: 50%;
-    opacity: 0;
-    z-index: 15;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(80, 80, 80, 0.7),
+    rgba(50, 50, 50, 0.4),
+    transparent
+  );
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 15;
 }
 
-.smoke-1 { left: 50%; bottom: 210px; transform: translateX(-50%); }
-.smoke-2 { left: 42%; bottom: 215px; }
-.smoke-3 { left: 52%; bottom: 220px; }
+.smoke-1 {
+  left: 50%;
+  bottom: 210px;
+  transform: translateX(-50%);
+}
+.smoke-2 {
+  left: 42%;
+  bottom: 215px;
+}
+.smoke-3 {
+  left: 52%;
+  bottom: 220px;
+}
 
 .volcano-animation.erupting .smoke-1 {
-    animation: smokeRise1 3.5s ease-out forwards;
+  animation: smokeRise1 3.5s ease-out forwards;
 }
 .volcano-animation.erupting .smoke-2 {
-    animation: smokeRise2 3.5s ease-out 0.3s forwards;
+  animation: smokeRise2 3.5s ease-out 0.3s forwards;
 }
 .volcano-animation.erupting .smoke-3 {
-    animation: smokeRise3 3.5s ease-out 0.5s forwards;
+  animation: smokeRise3 3.5s ease-out 0.5s forwards;
 }
 
 @keyframes smokeRise1 {
-    0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.5); }
-    15% { opacity: 0.8; }
-    100% { opacity: 0; transform: translateX(-50%) translateY(-180px) scale(3); }
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scale(0.5);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-180px) scale(3);
+  }
 }
 
 @keyframes smokeRise2 {
-    0% { opacity: 0; transform: translateY(0) scale(0.5); }
-    15% { opacity: 0.7; }
-    100% { opacity: 0; transform: translateX(-40px) translateY(-160px) scale(2.5); }
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-40px) translateY(-160px) scale(2.5);
+  }
 }
 
 @keyframes smokeRise3 {
-    0% { opacity: 0; transform: translateY(0) scale(0.5); }
-    15% { opacity: 0.7; }
-    100% { opacity: 0; transform: translateX(40px) translateY(-150px) scale(2.5); }
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(40px) translateY(-150px) scale(2.5);
+  }
 }
 
 /* Explosion Particles */
 .explosion-particle {
-    position: absolute;
-    bottom: 205px;
-    left: 50%;
-    width: 14px;
-    height: 14px;
-    background: radial-gradient(circle at 30% 30%, #fff, var(--lava-yellow), var(--lava-orange), var(--lava-red));
-    border-radius: 50% 40% 50% 30%;
-    opacity: 0;
-    z-index: 20;
-    box-shadow: 0 0 15px var(--lava-yellow), 0 0 25px var(--lava-orange);
+  position: absolute;
+  bottom: 205px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff,
+    var(--lava-yellow),
+    var(--lava-orange),
+    var(--lava-red)
+  );
+  border-radius: 50% 40% 50% 30%;
+  opacity: 0;
+  z-index: 20;
+  box-shadow: 0 0 15px var(--lava-yellow), 0 0 25px var(--lava-orange);
 }
 
-.volcano-animation.erupting .particle-1 { animation: explode1 1.8s ease-out 0.05s forwards; }
-.volcano-animation.erupting .particle-2 { animation: explode2 1.6s ease-out 0.1s forwards; }
-.volcano-animation.erupting .particle-3 { animation: explode3 2s ease-out 0.08s forwards; }
-.volcano-animation.erupting .particle-4 { animation: explode4 1.5s ease-out 0.12s forwards; }
-.volcano-animation.erupting .particle-5 { animation: explode5 1.9s ease-out 0.06s forwards; }
-.volcano-animation.erupting .particle-6 { animation: explode6 1.7s ease-out 0.15s forwards; }
-.volcano-animation.erupting .particle-7 { animation: explode7 2.1s ease-out 0.04s forwards; }
-.volcano-animation.erupting .particle-8 { animation: explode8 1.8s ease-out 0.18s forwards; }
+.volcano-animation.erupting .particle-1 {
+  animation: explode1 1.8s ease-out 0.05s forwards;
+}
+.volcano-animation.erupting .particle-2 {
+  animation: explode2 1.6s ease-out 0.1s forwards;
+}
+.volcano-animation.erupting .particle-3 {
+  animation: explode3 2s ease-out 0.08s forwards;
+}
+.volcano-animation.erupting .particle-4 {
+  animation: explode4 1.5s ease-out 0.12s forwards;
+}
+.volcano-animation.erupting .particle-5 {
+  animation: explode5 1.9s ease-out 0.06s forwards;
+}
+.volcano-animation.erupting .particle-6 {
+  animation: explode6 1.7s ease-out 0.15s forwards;
+}
+.volcano-animation.erupting .particle-7 {
+  animation: explode7 2.1s ease-out 0.04s forwards;
+}
+.volcano-animation.erupting .particle-8 {
+  animation: explode8 1.8s ease-out 0.18s forwards;
+}
 
 @keyframes explode1 {
-    0% { opacity: 1; transform: translate(-5px, 0) scale(1); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-130px, -100px) scale(0.3) rotate(540deg); }
+  0% {
+    opacity: 1;
+    transform: translate(-5px, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-130px, -100px) scale(0.3) rotate(540deg);
+  }
 }
 
 @keyframes explode2 {
-    0% { opacity: 1; transform: translate(5px, 0) scale(1); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(120px, -90px) scale(0.4) rotate(-540deg); }
+  0% {
+    opacity: 1;
+    transform: translate(5px, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(120px, -90px) scale(0.4) rotate(-540deg);
+  }
 }
 
 @keyframes explode3 {
-    0% { opacity: 1; transform: translate(0, 0) scale(1.1); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50px, -160px) scale(0.2) rotate(360deg); }
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50px, -160px) scale(0.2) rotate(360deg);
+  }
 }
 
 @keyframes explode4 {
-    0% { opacity: 1; transform: translate(0, 0) scale(0.9); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(60px, -150px) scale(0.3) rotate(-360deg); }
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60px, -150px) scale(0.3) rotate(-360deg);
+  }
 }
 
 @keyframes explode5 {
-    0% { opacity: 1; transform: translate(-3px, 0) scale(1.2); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-20px, -180px) scale(0.2) rotate(270deg); }
+  0% {
+    opacity: 1;
+    transform: translate(-3px, 0) scale(1.2);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-20px, -180px) scale(0.2) rotate(270deg);
+  }
 }
 
 @keyframes explode6 {
-    0% { opacity: 1; transform: translate(3px, 0) scale(1); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(30px, -170px) scale(0.25) rotate(-270deg); }
+  0% {
+    opacity: 1;
+    transform: translate(3px, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30px, -170px) scale(0.25) rotate(-270deg);
+  }
 }
 
 @keyframes explode7 {
-    0% { opacity: 1; transform: translate(-8px, 0) scale(0.8); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-150px, -60px) scale(0.2) rotate(630deg); }
+  0% {
+    opacity: 1;
+    transform: translate(-8px, 0) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-150px, -60px) scale(0.2) rotate(630deg);
+  }
 }
 
 @keyframes explode8 {
-    0% { opacity: 1; transform: translate(8px, 0) scale(0.9); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translate(140px, -50px) scale(0.2) rotate(-630deg); }
+  0% {
+    opacity: 1;
+    transform: translate(8px, 0) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(140px, -50px) scale(0.2) rotate(-630deg);
+  }
 }
 
 /* Eruption glow effect */
 .volcano-animation.erupting .crater {
-    animation: craterGlow 3s ease-out forwards;
+  animation: craterGlow 3s ease-out forwards;
 }
 
 @keyframes craterGlow {
-    0% { box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.8); }
-    15% { box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 60px var(--lava-yellow), 0 0 100px var(--lava-orange); }
-    50% { box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.6), 0 0 40px var(--lava-orange), 0 0 70px var(--lava-red); }
-    100% { box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.8), 0 0 25px var(--lava-red); }
+  0% {
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+  15% {
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 60px var(--lava-yellow),
+      0 0 100px var(--lava-orange);
+  }
+  50% {
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.6), 0 0 40px var(--lava-orange),
+      0 0 70px var(--lava-red);
+  }
+  100% {
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.8), 0 0 25px var(--lava-red);
+  }
 }
 
 .volcano-animation.erupting .lava-chamber {
-    animation: chamberErupt 3s ease-out forwards;
+  animation: chamberErupt 3s ease-out forwards;
 }
 
 @keyframes chamberErupt {
-    0% {
-        opacity: 0.6;
-        transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 20px var(--lava-orange), 0 0 40px var(--lava-red);
-    }
-    15% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.8);
-        background: radial-gradient(ellipse, #fff 20%, var(--lava-yellow) 60%, var(--lava-orange));
-        box-shadow: 0 0 50px var(--lava-yellow), 0 0 80px var(--lava-orange);
-    }
-    40% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.4);
-    }
-    100% {
-        opacity: 0.7;
-        transform: translateX(-50%) scale(1.1);
-        box-shadow: 0 0 25px var(--lava-orange), 0 0 45px var(--lava-red);
-    }
+  0% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 20px var(--lava-orange), 0 0 40px var(--lava-red);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.8);
+    background: radial-gradient(
+      ellipse,
+      #fff 20%,
+      var(--lava-yellow) 60%,
+      var(--lava-orange)
+    );
+    box-shadow: 0 0 50px var(--lava-yellow), 0 0 80px var(--lava-orange);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.4);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 25px var(--lava-orange), 0 0 45px var(--lava-red);
+  }
 }
 
 .eruption-text {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--lava-orange);
-    font-weight: bold;
-    white-space: nowrap;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--lava-orange);
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 /* Locations Grid */
 .world-map {
-    margin: 3rem 0;
+  margin: 3rem 0;
 }
 
 .world-map h3 {
-    text-align: center;
-    color: var(--lava-orange);
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
+  text-align: center;
+  color: var(--lava-orange);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
 
 .locations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .location-card {
-    background: rgba(42, 42, 42, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .location-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    border-color: var(--lava-orange);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+  transform: translateY(-10px) scale(1.05);
+  border-color: var(--lava-orange);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
 }
 
 .location-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .location-card h4 {
-    color: var(--lava-orange);
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+  color: var(--lava-orange);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .location-card p {
-    color: var(--text-gray);
+  color: var(--text-gray);
 }
 
 .fun-fact {
-    text-align: center;
-    font-style: italic;
-    color: var(--highlight-blue);
-    margin-top: 2rem;
-    font-size: 1.1rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--highlight-blue);
+  margin-top: 2rem;
+  font-size: 1.1rem;
 }
 
 /* Rock Cycle Diagram */
 .rock-cycle-diagram {
-    margin: 3rem 0;
-    padding: 2rem;
-    background: rgba(42, 42, 42, 0.4);
-    border-radius: 20px;
-    border: 2px solid rgba(255, 107, 53, 0.3);
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(42, 42, 42, 0.4);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 107, 53, 0.3);
 }
 
 .rock-cycle-diagram h3 {
-    text-align: center;
-    color: var(--lava-orange);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+  text-align: center;
+  color: var(--lava-orange);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 /* New Cross Layout */
 .cycle-cross-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    max-width: 900px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Top Section - Obsidian */
 .cycle-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .cycle-top .arrow {
-    position: absolute;
-    font-size: 2rem;
-    color: var(--highlight-blue);
-    bottom: -20px;
+  position: absolute;
+  font-size: 2rem;
+  color: var(--highlight-blue);
+  bottom: -20px;
 }
 
 .cycle-top .arrow-down-left {
-    left: -40px;
-    animation: bounceDownLeft 1.5s ease-in-out infinite;
+  left: -40px;
+  animation: bounceDownLeft 1.5s ease-in-out infinite;
 }
 
 .cycle-top .arrow-down-right {
-    right: -40px;
-    animation: bounceDownRight 1.5s ease-in-out infinite;
+  right: -40px;
+  animation: bounceDownRight 1.5s ease-in-out infinite;
 }
 
 @keyframes bounceDownLeft {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-5px, 8px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, 8px);
+  }
 }
 
 @keyframes bounceDownRight {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(5px, 8px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, 8px);
+  }
 }
 
 /* Middle Section - Sedimentary, Details, Metamorphic */
 .cycle-middle {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 1.5rem;
-    width: 100%;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: center;
 }
 
 /* Bottom Section - Igneous */
 .cycle-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .cycle-bottom .arrow {
-    position: absolute;
-    font-size: 2rem;
-    color: var(--highlight-blue);
-    top: -20px;
+  position: absolute;
+  font-size: 2rem;
+  color: var(--highlight-blue);
+  top: -20px;
 }
 
 .cycle-bottom .arrow-up-left {
-    left: -40px;
-    animation: bounceUpLeft 1.5s ease-in-out infinite;
+  left: -40px;
+  animation: bounceUpLeft 1.5s ease-in-out infinite;
 }
 
 .cycle-bottom .arrow-up-right {
-    right: -40px;
-    animation: bounceUpRight 1.5s ease-in-out infinite;
+  right: -40px;
+  animation: bounceUpRight 1.5s ease-in-out infinite;
 }
 
 @keyframes bounceUpLeft {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-5px, -8px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, -8px);
+  }
 }
 
 @keyframes bounceUpRight {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(5px, -8px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -8px);
+  }
 }
 
 /* Current Rock (Obsidian) */
 .current-rock {
-    background: radial-gradient(circle, #2a2a2a, #0a0a0a);
-    padding: 1.5rem;
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--lava-orange);
-    box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: radial-gradient(circle, #2a2a2a, #0a0a0a);
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--lava-orange);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .current-rock:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 50px rgba(255, 107, 53, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(255, 107, 53, 0.8);
 }
 
 .current-rock.active {
-    box-shadow: 0 0 50px rgba(255, 107, 53, 0.9);
-    border-color: var(--lava-yellow);
+  box-shadow: 0 0 50px rgba(255, 107, 53, 0.9);
+  border-color: var(--lava-yellow);
 }
 
 @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.5); }
-    50% { box-shadow: 0 0 50px rgba(255, 107, 53, 0.8); }
+  0%,
+  100% {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 107, 53, 0.8);
+  }
 }
 
 .rock-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .obsidian-icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .current-rock p {
-    text-align: center;
-    font-weight: bold;
-    color: var(--lava-orange);
-    font-size: 0.85rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--lava-orange);
+  font-size: 0.85rem;
 }
 
 /* Rock Types */
 .rock-type {
-    background: rgba(42, 42, 42, 0.8);
-    padding: 1.5rem 1rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: rgba(42, 42, 42, 0.8);
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .rock-type:hover {
-    transform: scale(1.08);
-    border-color: var(--lava-orange);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+  transform: scale(1.08);
+  border-color: var(--lava-orange);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
 }
 
 .rock-type.active {
-    border-color: var(--lava-yellow);
-    background: rgba(255, 107, 53, 0.2);
-    transform: scale(1.05);
+  border-color: var(--lava-yellow);
+  background: rgba(255, 107, 53, 0.2);
+  transform: scale(1.05);
 }
 
 .rock-type .rock-icon {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .rock-type p {
-    font-size: 0.85rem;
-    color: var(--text-gray);
-    margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin-top: 0.5rem;
 }
 
-.sedimentary { border-color: rgba(139, 69, 19, 0.5); }
-.sedimentary:hover, .sedimentary.active { border-color: #8b4513; }
+.sedimentary {
+  border-color: rgba(139, 69, 19, 0.5);
+}
+.sedimentary:hover,
+.sedimentary.active {
+  border-color: #8b4513;
+}
 
-.metamorphic { border-color: rgba(94, 53, 177, 0.5); }
-.metamorphic:hover, .metamorphic.active { border-color: var(--volcanic-purple); }
+.metamorphic {
+  border-color: rgba(94, 53, 177, 0.5);
+}
+.metamorphic:hover,
+.metamorphic.active {
+  border-color: var(--volcanic-purple);
+}
 
-.igneous { border-color: rgba(255, 107, 53, 0.5); }
-.igneous:hover, .igneous.active { border-color: var(--lava-orange); }
+.igneous {
+  border-color: rgba(255, 107, 53, 0.5);
+}
+.igneous:hover,
+.igneous.active {
+  border-color: var(--lava-orange);
+}
 
 /* Center Details Box */
 .cycle-details-center {
-    background: rgba(26, 26, 26, 0.9);
-    border: 2px solid rgba(255, 107, 53, 0.4);
-    border-radius: 15px;
-    padding: 1.5rem;
-    min-height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: rgba(26, 26, 26, 0.9);
+  border: 2px solid rgba(255, 107, 53, 0.4);
+  border-radius: 15px;
+  padding: 1.5rem;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .detail-content {
-    text-align: center;
-    animation: fadeIn 0.4s ease-out;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .detail-content h4 {
-    color: var(--lava-orange);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  color: var(--lava-orange);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .detail-content p {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
 }
 
 .detail-content .timeline {
-    background: rgba(255, 107, 53, 0.1);
-    padding: 0.8rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--lava-orange);
-    margin-top: 1rem;
-    font-style: italic;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--lava-orange);
+  margin-top: 1rem;
+  font-style: italic;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .cycle-middle {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+  .cycle-middle {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
-    .cycle-details-center {
-        order: 3;
-        min-height: auto;
-    }
+  .cycle-details-center {
+    order: 3;
+    min-height: auto;
+  }
 
-    .cycle-top .arrow,
-    .cycle-bottom .arrow {
-        display: none;
-    }
+  .cycle-top .arrow,
+  .cycle-bottom .arrow {
+    display: none;
+  }
 }
 
 .transformation-card {
-    background: rgba(42, 42, 42, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid var(--lava-orange);
-    animation: slideIn 0.5s ease-out;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid var(--lava-orange);
+  animation: slideIn 0.5s ease-out;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .transformation-card h3 {
-    color: var(--lava-orange);
-    margin-bottom: 1rem;
+  color: var(--lava-orange);
+  margin-bottom: 1rem;
 }
 
 .transformation-card p {
-    color: var(--text-gray);
-    line-height: 1.8;
-    margin-bottom: 1rem;
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .timeline {
-    background: rgba(255, 107, 53, 0.1);
-    padding: 1rem;
-    border-left: 4px solid var(--lava-yellow);
-    border-radius: 5px;
-    font-style: italic;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 1rem;
+  border-left: 4px solid var(--lava-yellow);
+  border-radius: 5px;
+  font-style: italic;
 }
 
 /* Uses Section */
 .uses-section {
-    margin: 3rem 0;
+  margin: 3rem 0;
 }
 
 .uses-section h3 {
-    color: var(--lava-orange);
-    margin: 2rem 0 1.5rem;
-    font-size: 1.8rem;
+  color: var(--lava-orange);
+  margin: 2rem 0 1.5rem;
+  font-size: 1.8rem;
 }
 
 .uses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 .use-card {
-    background: rgba(42, 42, 42, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    transition: all 0.3s ease;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.3s ease;
 }
 
 .use-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--lava-orange);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+  transform: translateY(-10px);
+  border-color: var(--lava-orange);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
 }
 
 .use-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .use-card h4 {
-    color: var(--lava-orange);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+  color: var(--lava-orange);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 .use-card p {
-    color: var(--text-gray);
-    line-height: 1.8;
+  color: var(--text-gray);
+  line-height: 1.8;
 }
 
 .modern-uses {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .modern-use-item {
-    background: rgba(42, 42, 42, 0.6);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 4px solid var(--lava-orange);
-    color: var(--text-gray);
-    transition: all 0.3s ease;
+  background: rgba(42, 42, 42, 0.6);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--lava-orange);
+  color: var(--text-gray);
+  transition: all 0.3s ease;
 }
 
 .modern-use-item:hover {
-    transform: translateX(10px);
-    background: rgba(255, 107, 53, 0.1);
+  transform: translateX(10px);
+  background: rgba(255, 107, 53, 0.1);
 }
 
 /* Appearance Section */
 .appearance-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin: 3rem 0;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+  align-items: center;
 }
 
 .obsidian-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Oscar - Large version for Appearance section */
 .obsidian-sample {
-    width: 280px;
-    height: 280px;
-    background: #0a0a0a;
-    clip-path: polygon(
-        50% 0%,
-        85% 8%,
-        100% 35%,
-        95% 70%,
-        80% 95%,
-        50% 100%,
-        20% 95%,
-        5% 70%,
-        0% 35%,
-        15% 8%
-    );
-    box-shadow:
-        0 0 50px rgba(255, 107, 53, 0.4),
-        0 15px 40px rgba(0, 0, 0, 0.8);
-    position: relative;
-    overflow: visible;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 280px;
+  height: 280px;
+  background: #0a0a0a;
+  clip-path: polygon(
+    50% 0%,
+    85% 8%,
+    100% 35%,
+    95% 70%,
+    80% 95%,
+    50% 100%,
+    20% 95%,
+    5% 70%,
+    0% 35%,
+    15% 8%
+  );
+  box-shadow: 0 0 50px rgba(255, 107, 53, 0.4), 0 15px 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .obsidian-sample:hover {
-    transform: scale(1.1) rotate(3deg);
-    box-shadow:
-        0 0 80px rgba(255, 107, 53, 0.6),
-        0 20px 50px rgba(0, 0, 0, 0.9);
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 80px rgba(255, 107, 53, 0.6), 0 20px 50px rgba(0, 0, 0, 0.9);
 }
-
 
 /* Inner face for the sample */
 .obsidian-sample .oscar-inner-face {
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    width: 76%;
-    height: 70%;
-    background: #3d3d3d;
-    clip-path: polygon(
-        50% 0%,
-        90% 15%,
-        100% 50%,
-        85% 90%,
-        50% 100%,
-        15% 90%,
-        0% 50%,
-        10% 15%
-    );
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: 76%;
+  height: 70%;
+  background: #3d3d3d;
+  clip-path: polygon(
+    50% 0%,
+    90% 15%,
+    100% 50%,
+    85% 90%,
+    50% 100%,
+    15% 90%,
+    0% 50%,
+    10% 15%
+  );
 }
 
 .obsidian-sample .oscar-shine {
-    position: absolute;
-    top: -8%;
-    right: -5%;
-    width: 45%;
-    height: 35%;
-    background: linear-gradient(135deg, #6a6a6a, #4a4a4a);
-    clip-path: polygon(
-        20% 0%,
-        100% 20%,
-        80% 100%,
-        0% 60%
-    );
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  top: -8%;
+  right: -5%;
+  width: 45%;
+  height: 35%;
+  background: linear-gradient(135deg, #6a6a6a, #4a4a4a);
+  clip-path: polygon(20% 0%, 100% 20%, 80% 100%, 0% 60%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
 .obsidian-sample:hover .oscar-shine {
-    opacity: 1;
-    background: linear-gradient(135deg, #8a8a8a, #5a5a5a);
+  opacity: 1;
+  background: linear-gradient(135deg, #8a8a8a, #5a5a5a);
 }
 
 .obsidian-sample .oscar-eyebrow {
-    position: absolute;
-    width: 22%;
-    height: 6%;
-    background: #2a2a2a;
-    border-radius: 3px;
+  position: absolute;
+  width: 22%;
+  height: 6%;
+  background: #2a2a2a;
+  border-radius: 3px;
 }
 
 .obsidian-sample .oscar-eyebrow-left {
-    top: 22%;
-    left: 18%;
-    transform: rotate(-10deg);
+  top: 22%;
+  left: 18%;
+  transform: rotate(-10deg);
 }
 
 .obsidian-sample .oscar-eyebrow-right {
-    top: 22%;
-    right: 18%;
-    transform: rotate(10deg);
+  top: 22%;
+  right: 18%;
+  transform: rotate(10deg);
 }
 
 .obsidian-sample .oscar-eye {
-    position: absolute;
-    width: 28%;
-    height: 32%;
-    background: #ffffff;
-    border-radius: 50%;
-    top: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  width: 28%;
+  height: 32%;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .obsidian-sample .oscar-eye-left {
-    left: 12%;
+  left: 12%;
 }
 
 .obsidian-sample .oscar-eye-right {
-    right: 12%;
+  right: 12%;
 }
 
 .obsidian-sample .oscar-pupil {
-    width: 45%;
-    height: 45%;
-    background: #4a4a4a;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.1s ease-out;
+  width: 45%;
+  height: 45%;
+  background: #4a4a4a;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.1s ease-out;
 }
 
 .obsidian-sample .oscar-pupil::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 30%;
-    height: 30%;
-    background: white;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 30%;
+  height: 30%;
+  background: white;
+  border-radius: 50%;
 }
 
 .obsidian-sample .oscar-mouth {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 35%;
-    height: 20%;
-    background: #1a1a1a;
-    border-radius: 0 0 50% 50%;
-    overflow: hidden;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 20%;
+  background: #1a1a1a;
+  border-radius: 0 0 50% 50%;
+  overflow: hidden;
 }
 
 .obsidian-sample .oscar-tongue {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 60%;
-    background: #e85d04;
-    border-radius: 50% 50% 40% 40%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 60%;
+  background: #e85d04;
+  border-radius: 50% 50% 40% 40%;
 }
 
 .obsidian-sample .oscar-lava-glow {
-    position: absolute;
-    bottom: -5%;
-    left: 10%;
-    width: 80%;
-    height: 25%;
-    background: radial-gradient(ellipse at center, #ff9500 0%, #e85d04 40%, transparent 70%);
-    filter: blur(10px);
-    opacity: 0.9;
-    z-index: -1;
-    transition: all 0.3s ease;
+  position: absolute;
+  bottom: -5%;
+  left: 10%;
+  width: 80%;
+  height: 25%;
+  background: radial-gradient(
+    ellipse at center,
+    #ff9500 0%,
+    #e85d04 40%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  opacity: 0.9;
+  z-index: -1;
+  transition: all 0.3s ease;
 }
 
 .obsidian-sample:hover .oscar-lava-glow {
-    opacity: 1;
-    filter: blur(15px);
-    height: 30%;
+  opacity: 1;
+  filter: blur(15px);
+  height: 30%;
 }
 
 .sample-label {
-    margin-top: 1rem;
-    color: var(--text-gray);
-    font-style: italic;
+  margin-top: 1rem;
+  color: var(--text-gray);
+  font-style: italic;
 }
 
 .properties-list h3 {
-    color: var(--lava-orange);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+  color: var(--lava-orange);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .property-item {
-    background: rgba(42, 42, 42, 0.6);
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    border-left: 4px solid var(--lava-orange);
-    color: var(--text-gray);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
+  background: rgba(42, 42, 42, 0.6);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border-left: 4px solid var(--lava-orange);
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
 }
 
 .property-item:hover {
-    transform: translateX(10px);
-    background: rgba(255, 107, 53, 0.1);
+  transform: translateX(10px);
+  background: rgba(255, 107, 53, 0.1);
 }
 
 .property-icon {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .texture-description {
-    margin-top: 3rem;
-    background: rgba(42, 42, 42, 0.6);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+  margin-top: 3rem;
+  background: rgba(42, 42, 42, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
 .texture-description h3 {
-    color: var(--lava-orange);
-    margin-bottom: 1rem;
+  color: var(--lava-orange);
+  margin-bottom: 1rem;
 }
 
 .texture-description p {
-    color: var(--text-gray);
-    line-height: 1.8;
+  color: var(--text-gray);
+  line-height: 1.8;
 }
 
 /* Epilogue */
 .epilogue {
-    padding: 5rem 2rem;
-    text-align: center;
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
 .epilogue-content {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .epilogue-content p {
-    color: var(--text-gray);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
 .sign-off {
-    font-size: 1.5rem;
-    color: var(--lava-orange);
-    font-weight: bold;
-    margin: 2rem 0;
+  font-size: 1.5rem;
+  color: var(--lava-orange);
+  font-weight: bold;
+  margin: 2rem 0;
 }
 
 .the-end {
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 3rem 0;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, var(--lava-orange), var(--lava-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 3rem 0;
 }
 
 .ps {
-    font-style: italic;
-    color: var(--text-gray);
-    font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-gray);
+  font-size: 0.9rem;
 }
 
 /* Quiz Section */
 .quiz-section {
-    padding: 5rem 2rem;
-    background: rgba(26, 26, 26, 0.5);
+  padding: 5rem 2rem;
+  background: rgba(26, 26, 26, 0.5);
 }
 
 .quiz-question {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 
 .quiz-question.active {
-    display: block;
-    animation: slideIn 0.5s ease-out;
+  display: block;
+  animation: slideIn 0.5s ease-out;
 }
 
 .quiz-question h3 {
-    color: var(--lava-orange);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+  color: var(--lava-orange);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .quiz-option {
-    padding: 1.5rem;
-    font-size: 1.1rem;
-    background: rgba(42, 42, 42, 0.6);
-    color: var(--text-white);
-    border: 2px solid rgba(255, 107, 53, 0.2);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  background: rgba(42, 42, 42, 0.6);
+  color: var(--text-white);
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .quiz-option:hover {
-    border-color: var(--lava-orange);
-    background: rgba(255, 107, 53, 0.1);
-    transform: translateX(10px);
+  border-color: var(--lava-orange);
+  background: rgba(255, 107, 53, 0.1);
+  transform: translateX(10px);
 }
 
 .quiz-option.correct {
-    border-color: #4caf50;
-    background: rgba(76, 175, 80, 0.2);
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.2);
 }
 
 .quiz-option.incorrect {
-    border-color: #f44336;
-    background: rgba(244, 67, 54, 0.2);
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.2);
 }
 
 .quiz-results {
-    text-align: center;
-    animation: slideIn 0.5s ease-out;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
 }
 
 .quiz-results h3 {
-    color: var(--lava-orange);
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  color: var(--lava-orange);
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Clickable Use Card */
 .use-card.clickable {
-    cursor: pointer;
-    position: relative;
+  cursor: pointer;
+  position: relative;
 }
 
 .use-card.clickable:hover {
-    border-color: var(--lava-yellow);
-    transform: translateY(-10px) scale(1.02);
+  border-color: var(--lava-yellow);
+  transform: translateY(-10px) scale(1.02);
 }
 
 .click-hint {
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--lava-yellow);
-    font-style: italic;
-    opacity: 0.8;
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--lava-yellow);
+  font-style: italic;
+  opacity: 0.8;
 }
 
 /* Image Modal */
 .image-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.3s ease;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
 }
 
 .image-modal.active {
-    display: flex;
+  display: flex;
 }
 
 .modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    text-align: center;
-    animation: zoomIn 0.3s ease;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  animation: zoomIn 0.3s ease;
 }
 
 @keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .modal-image {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
 }
 
 .modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    font-size: 2.5rem;
-    color: var(--text-white);
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 2.5rem;
+  color: var(--text-white);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .modal-close:hover {
-    color: var(--lava-orange);
+  color: var(--lava-orange);
 }
 
 .modal-caption {
-    margin-top: 1rem;
-    color: var(--lava-orange);
-    font-size: 1.2rem;
-    font-style: italic;
+  margin-top: 1rem;
+  color: var(--lava-orange);
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 /* Gallery Modal */
 .gallery-content {
-    position: relative;
-    max-width: 95%;
-    max-height: 95%;
-    text-align: center;
-    animation: zoomIn 0.3s ease;
-    padding: 2rem;
+  position: relative;
+  max-width: 95%;
+  max-height: 95%;
+  text-align: center;
+  animation: zoomIn 0.3s ease;
+  padding: 2rem;
 }
 
 .gallery-title {
-    color: var(--lava-orange);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+  color: var(--lava-orange);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .gallery-single {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
-    max-width: 900px;
-    margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .gallery-single img {
-    width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
-    display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
 }
 
 .gallery-caption {
-    margin-top: 1.5rem;
-    color: var(--lava-yellow);
-    font-size: 1.1rem;
-    font-style: italic;
+  margin-top: 1.5rem;
+  color: var(--lava-yellow);
+  font-size: 1.1rem;
+  font-style: italic;
 }
 
 /* Footer */
 footer {
-    background: var(--obsidian-black);
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-gray);
-    border-top: 2px solid var(--lava-orange);
+  background: var(--obsidian-black);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-gray);
+  border-top: 2px solid var(--lava-orange);
 }
 
 footer p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-    }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
 
-    .glitch {
-        font-size: 2rem;
-    }
+  .glitch {
+    font-size: 2rem;
+  }
 
-    .subtitle {
-        font-size: 1.2rem;
-    }
+  .subtitle {
+    font-size: 1.2rem;
+  }
 
-    .chapter-title {
-        font-size: 1.8rem;
-    }
+  .chapter-title {
+    font-size: 1.8rem;
+  }
 
-    .cycle-container {
-        grid-template-columns: 1fr;
-    }
+  .cycle-container {
+    grid-template-columns: 1fr;
+  }
 
-    .appearance-showcase {
-        grid-template-columns: 1fr;
-    }
+  .appearance-showcase {
+    grid-template-columns: 1fr;
+  }
 
-    .locations-grid {
-        grid-template-columns: 1fr;
-    }
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Smooth Scrolling */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Selection Color */
 ::selection {
-    background: var(--lava-orange);
-    color: var(--text-white);
+  background: var(--lava-orange);
+  color: var(--text-white);
 }
